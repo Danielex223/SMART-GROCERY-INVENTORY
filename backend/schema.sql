@@ -1,0 +1,51 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS suppliers;
+DROP TABLE IF EXISTS sales;
+DROP TABLE IF EXISTS sale_items;
+
+-- USERS
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+-- PRODUCTS
+CREATE TABLE products (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  sku TEXT,
+  barcode TEXT,
+  category TEXT,
+  price REAL DEFAULT 0,
+  quantity INTEGER DEFAULT 0,
+  reorder INTEGER DEFAULT 0,
+  supplier TEXT
+);
+
+-- SUPPLIERS
+CREATE TABLE suppliers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT,
+  phone TEXT
+);
+
+-- SALES
+CREATE TABLE sales (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  total REAL DEFAULT 0,
+  items_count INTEGER DEFAULT 0
+);
+
+-- SALE ITEMS (line items)
+CREATE TABLE sale_items (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sale_id INTEGER,
+  product_id INTEGER,
+  qty INTEGER,
+  line_total REAL,
+  FOREIGN KEY(sale_id) REFERENCES sales(id),
+  FOREIGN KEY(product_id) REFERENCES products(id)
+);
