@@ -1,6 +1,6 @@
 # SmartGrocery
 
-A full-stack inventory and point-of-sale management system for small grocery stores — built as a school project.
+A full-stack inventory and point-of-sale management system for small grocery stores, built as a school project.
 
 ## Features
 
@@ -9,6 +9,7 @@ A full-stack inventory and point-of-sale management system for small grocery sto
 - Supplier management
 - Sales tracking with itemized sale records
 - Reports and dashboard overview
+- Light/dark theme toggle
 
 ## Tech Stack
 
@@ -19,11 +20,8 @@ A full-stack inventory and point-of-sale management system for small grocery sto
 
 ## Project Structure
 
-```
-smartgrocery/
-├── frontend/     React app (Vite)
-└── backend/      Express API + SQLite database
-```
+- `frontend/` — React app (Vite)
+- `backend/` — Express API + SQLite database
 
 ## Running locally
 
@@ -32,7 +30,7 @@ smartgrocery/
 ```bash
 cd backend
 npm install
-cp .env.example .env    # then fill in your own JWT_SECRET
+cp .env.example .env
 npm start
 ```
 
@@ -43,6 +41,11 @@ cd frontend
 npm install
 npm run dev
 ```
+
+## Other Projects
+
+- **[GGCHAT](https://github.com/Danielex223/ggchat)** — Real-time messaging platform with synced YouTube watch parties, friends system, and group admin controls. [Live demo](https://ggchat-git-main-danielex223s-projects.vercel.app/)
+- **[BudgetIQ](https://github.com/Danielex223/budgetiq)** — Personal finance SaaS with budget tracking and spending analytics. [Live demo](https://budgetiq-one.vercel.app/)
 
 ## Author
 
